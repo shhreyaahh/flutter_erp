@@ -112,7 +112,7 @@ class CustomBottomNav extends StatelessWidget {
 
                           _navItem(
                             icon: Icons.bar_chart_rounded,
-                            label: "Quick Summary",
+                            label: "Summary",
                             selected: currentIndex == 1,
                             width: currentIndex == 1
                                 ? selectedWidth

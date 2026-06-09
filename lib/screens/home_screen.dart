@@ -20,22 +20,31 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: 20),
 
                 // Header
+                // Header
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      width: 42,
-                      height: 42,
+                      width: 37,
+                      height: 37,
                       decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: 0.25),
                         shape: BoxShape.circle,
+                        color: Colors.white.withValues(alpha: 0.45),
                         border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.4),
+                          color: Colors.white.withValues(alpha: 0.8),
+                          width: 1,
                         ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.03),
+                            blurRadius: 12,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
                       ),
                       child: const Icon(
                         Icons.account_circle,
-                        size: 22,
+                        size: 24,
                         color: Colors.black87,
                       ),
                     ),
@@ -45,35 +54,44 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w700,
+                        color: Colors.black87,
                       ),
                     ),
 
                     Container(
-                      width: 42,
-                      height: 42,
+                      width: 37,
+                      height: 37,
                       decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: 0.25),
                         shape: BoxShape.circle,
+                        color: Colors.white.withValues(alpha: 0.45),
                         border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.4),
+                          color: Colors.white.withValues(alpha: 0.8),
+                          width: 1,
                         ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.03),
+                            blurRadius: 12,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
                       ),
                       child: const Icon(
                         Icons.send_outlined,
-                        size: 22,
+                        size: 24,
                         color: Colors.black87,
                       ),
                     ),
                   ],
                 ),
 
-                const SizedBox(height: 28),
+                const SizedBox(height: 20),
 
                 const Text(
                   'Welcome Back Admin !',
                   style: TextStyle(
                     fontSize: 14,
-                    color: Colors.black87,
+                    color: Colors.black54,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
