@@ -1,0 +1,5 @@
+- [ ] Add lucide_icons dependency to pubspec.yaml
+- [ ] Run flutter pub get
+- [ ] Fix icon identifiers / import usage in custom_bottom_nav.dart
+- [ ] Run flutter analyze and flutter test
+- [ ] If any other Icons.\* exist in the app, update them to lucide thin icons too (optional)
