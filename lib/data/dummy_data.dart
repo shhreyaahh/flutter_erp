@@ -1,16 +1,32 @@
-import 'package:flutter/material.dart';
+//import 'package:flutter/material.dart';
+import 'package:heroicons/heroicons.dart';
 
 final menuItems = [
-  {'title': 'Attendance', 'icon': Icons.person},
-  {'title': 'Fees', 'icon': Icons.credit_card},
-  {'title': 'Reception', 'icon': Icons.headphones},
-  {'title': 'Timetable', 'icon': Icons.schedule},
-  {'title': 'Homework', 'icon': Icons.book},
+  {
+    'title': 'Attendance',
+    'icon': HeroIcons.user,
+  },
+  {
+    'title': 'Fees',
+    'icon': HeroIcons.creditCard,
+  },
+  {
+    'title': 'Reception',
+    'icon': HeroIcons.bell,
+  },
+  {
+    'title': 'Timetable',
+    'icon': HeroIcons.clock,
+  },
+  {
+    'title': 'Homework',
+    'icon': HeroIcons.bookOpen,
+  },
 ];
 
 final notices = [
   {
-    'title': 'Holiday TomorLucideIcons.userCircle2',
+    'title': 'Holiday Tomorrow',
     'date': '12 Jun',
     'description': 'School will remain closed tomorrow due to local holiday.',
   },

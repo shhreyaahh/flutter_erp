@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:heroicons/heroicons.dart';
 import 'package:flutter_erp/data/dummy_data.dart';
 import 'package:flutter_erp/widgets/menu_card.dart';
 
@@ -27,6 +28,7 @@ class HomeScreen extends StatelessWidget {
                     Container(
                       width: 37,
                       height: 37,
+                      alignment: Alignment.center,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.white.withValues(alpha: 0.45),
@@ -42,25 +44,29 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      child: const Icon(
-                        Icons.account_circle,
-                        size: 24,
+                      child: HeroIcon(
+                        HeroIcons.userCircle,
+                        size: 30,
                         color: Colors.black87,
                       ),
                     ),
 
-                    const Text(
+                    Text(
                       'ZeroERP',
                       style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.black87,
+                        fontFamily: 'Neue Montreal',
+                        fontWeight: FontWeight.w800,
+                        fontSize: 22,
+                        height: 1.0,
+                        letterSpacing: 0.0,
+                        color: Colors.grey[800],
                       ),
                     ),
 
                     Container(
                       width: 37,
                       height: 37,
+                      alignment: Alignment.center,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.white.withValues(alpha: 0.45),
@@ -76,9 +82,9 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      child: const Icon(
-                        Icons.send_outlined,
-                        size: 24,
+                      child: HeroIcon(
+                        HeroIcons.paperAirplane,
+                        size: 20,
                         color: Colors.black87,
                       ),
                     ),
@@ -90,9 +96,10 @@ class HomeScreen extends StatelessWidget {
                 const Text(
                   'Welcome Back Admin !',
                   style: TextStyle(
-                    fontSize: 14,
+                    fontFamily: 'Neue Montreal',
+                    fontSize: 18,
                     color: Colors.black54,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w300,
                   ),
                 ),
 
@@ -110,9 +117,10 @@ class HomeScreen extends StatelessWidget {
                   ),
                   itemBuilder: (context, index) {
                     return MenuCard(
-                      icon: menuItems[index]['icon'] as IconData,
-                      title: menuItems[index]['title'] as String,
-                    );
+  icon: menuItems[index]['icon'] as HeroIcons,
+  title: menuItems[index]['title'] as String,
+);
+                    
                   },
                 ),
               ],

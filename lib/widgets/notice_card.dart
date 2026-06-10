@@ -60,7 +60,7 @@ class NoticeCard extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(width: 16),
+          const SizedBox(width: 12   ),
 
           Column(
             children: [

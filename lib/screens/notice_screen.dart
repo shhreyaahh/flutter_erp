@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:heroicons/heroicons.dart';
 import '../data/dummy_data.dart';
 import '../widgets/notice_card.dart';
 
@@ -24,6 +25,7 @@ class NoticesScreen extends StatelessWidget {
                   Container(
                     width: 37,
                     height: 37,
+                    alignment: Alignment.center,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.white.withValues(alpha: 0.45),
@@ -39,9 +41,9 @@ class NoticesScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    child: const Icon(
-                      Icons.account_circle,
-                      size: 24,
+                    child: HeroIcon(
+                      HeroIcons.userCircle,
+                      size: 30,
                       color: Colors.black87,
                     ),
                   ),

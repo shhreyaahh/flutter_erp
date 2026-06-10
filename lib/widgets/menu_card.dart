@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:heroicons/heroicons.dart';
 
 class MenuCard extends StatelessWidget {
-  final IconData icon;
+  final HeroIcons icon;
   final String title;
 
   const MenuCard({
@@ -33,10 +34,13 @@ class MenuCard extends StatelessWidget {
               ),
             ],
           ),
-          child: Icon(
-            icon,
-            size: 26,
-            color: Colors.black87,
+          child: Center(
+            child: HeroIcon(
+              icon,
+              style: HeroIconStyle.outline,
+              size: 32,
+              color: Colors.black87,
+            ),
           ),
         ),
 

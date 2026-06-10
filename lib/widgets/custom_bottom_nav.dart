@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:heroicons/heroicons.dart';
 
 class CustomBottomNav extends StatelessWidget {
   final int currentIndex;
   final Function(int) onTap;
 
-  static const double _navHeight = 74;
-  static const double _innerPadding = 8;
+  static const double _navHeight = 62;
+  static const double _innerPadding = 6;
   static const double _selectedHeight = _navHeight - (_innerPadding * 2);
   static const Color _accentColor = Color(0xFFFFA988);
   static const Color _selectedColor = Color(0xFFF4C3B3);
@@ -17,18 +18,17 @@ class CustomBottomNav extends StatelessWidget {
   });
 
   Widget _navItem({
-    required IconData icon,
+    required HeroIcons icon,
     required String label,
     required bool selected,
     required VoidCallback onPressed,
-    required double width,
   }) {
     return GestureDetector(
       onTap: onPressed,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 250),
         curve: Curves.easeOut,
-        width: width,
+        width: double.infinity,
         height: _selectedHeight,
         decoration: BoxDecoration(
           color: selected ? _selectedColor : Colors.transparent,
@@ -37,9 +37,10 @@ class CustomBottomNav extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
+            HeroIcon(
               icon,
-              size: selected ? 27 : 25,
+              style: HeroIconStyle.outline,
+              size: selected ? 24 : 22,
               color: selected ? Colors.white : Colors.black,
             ),
 
@@ -51,7 +52,7 @@ class CustomBottomNav extends StatelessWidget {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
-                fontSize: selected ? 15 : 14,
+                fontSize: selected ? 11 : 10,
                 fontWeight: FontWeight.w500,
                 color: selected ? Colors.white : Colors.black87,
               ),
@@ -88,46 +89,42 @@ class CustomBottomNav extends StatelessWidget {
                 ),
                 child: LayoutBuilder(
                   builder: (context, constraints) {
-                    final availableWidth =
-                        constraints.maxWidth - (_innerPadding * 2);
-                    final selectedWidth = availableWidth >= 300
-                        ? (availableWidth * 0.34).clamp(112.0, 148.0)
-                        : availableWidth * 0.38;
-                    final normalWidth = (availableWidth - selectedWidth) / 2;
-
                     return Padding(
                       padding: const EdgeInsets.all(_innerPadding),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          _navItem(
-                            icon: Icons.home,
-                            label: "Home",
-                            selected: currentIndex == 0,
-                            width: currentIndex == 0
-                                ? selectedWidth
-                                : normalWidth,
-                            onPressed: () => onTap(0),
+                          Expanded(
+                            flex: 1,
+                            child: _navItem(
+                              icon: HeroIcons.home,
+                              label: "Home",
+                              selected: currentIndex == 0,
+                              onPressed: () => onTap(0),
+                            ),
                           ),
 
-                          _navItem(
-                            icon: Icons.bar_chart_rounded,
-                            label: "Summary",
-                            selected: currentIndex == 1,
-                            width: currentIndex == 1
-                                ? selectedWidth
-                                : normalWidth,
-                            onPressed: () => onTap(1),
+                          const SizedBox(width: 8),
+
+                          Expanded(
+                            flex: 1,
+                            child: _navItem(
+                              icon: HeroIcons.chartBar,
+                              label: "Summary",
+                              selected: currentIndex == 1,
+                              onPressed: () => onTap(1),
+                            ),
                           ),
 
-                          _navItem(
-                            icon: Icons.notifications_none_rounded,
-                            label: "Notices",
-                            selected: currentIndex == 2,
-                            width: currentIndex == 2
-                                ? selectedWidth
-                                : normalWidth,
-                            onPressed: () => onTap(2),
+                          const SizedBox(width: 8),
+
+                          Expanded(
+                            flex: 1,
+                            child: _navItem(
+                              icon: HeroIcons.megaphone,
+                              label: "Notices",
+                              selected: currentIndex == 2,
+                              onPressed: () => onTap(2),
+                            ),
                           ),
                         ],
                       ),
@@ -137,7 +134,7 @@ class CustomBottomNav extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(width: 16),
+            const SizedBox(width: 12),
 
             Container(
               width: _navHeight,
@@ -155,7 +152,12 @@ class CustomBottomNav extends StatelessWidget {
                   ),
                 ],
               ),
-              child: const Icon(Icons.search, size: 30, color: Colors.black87),
+              child: HeroIcon(
+                HeroIcons.magnifyingGlass,
+                style: HeroIconStyle.outline,
+                size: 24,
+                color: Colors.black87,
+              ),
             ),
           ],
         ),
